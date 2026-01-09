@@ -21,19 +21,22 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'tu-email@gmail.com'; // tu correo de Gmail
-    $mail->Password   = 'gijy uhgw swox geum';    // tu App Password de Gmail
+    $mail->Username   = 'fradivicab@gmail.com'; // tu correo de Gmail
+    $mail->Password   = 'usydyxmvtqgyqjlv';    // tu App Password de Gmail
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // TLS
     $mail->Port       = 587;
 
+    $mail->CharSet = 'UTF-8';
+
     // Debug para ver detalle de conexión (en el navegador)
-    $mail->SMTPDebug = 2;
+    $mail->SMTPDebug = 0;
     $mail->Debugoutput = function($str, $level) {
         echo "Debug level $level; message: $str<br>";
     };
 
     // Remitente y destinatario
-    $mail->setFrom($email, $name);
+    $mail->setFrom('fradivicab@gmail.com', 'Formulario Web');
+    $mail->addReplyTo($email, $name);
     $mail->addAddress($receiving_email_address);
 
     // Contenido del mensaje
