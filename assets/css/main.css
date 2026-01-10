@@ -1507,3 +1507,13 @@ section,
   cursor: pointer;
   margin-top: 10px;
 }
+
+.swiper-slide img {
+  max-width: 100%;
+  max-height: 400px;   /* limitás la altura */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
