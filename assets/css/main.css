@@ -1467,3 +1467,53 @@ section,
 .photo-perfil {
   border-radius: 5%;
 }
+
+.resume-collapsible {
+  max-height: 500px;        /* ajustá este valor ≈ 30% visual */
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.5s ease;
+}
+
+/* efecto fade al final */
+.resume-collapsible::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  background: linear-gradient(
+    rgba(255,255,255,0),
+    rgba(255,255,255,1)
+  );
+  pointer-events: none;
+}
+
+/* cuando está expandido */
+.resume-collapsible.expanded {
+  max-height: 5000px; /* suficientemente grande */
+}
+
+.resume-collapsible.expanded::after {
+  display: none;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #0d6efd;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.swiper-slide img {
+  max-width: 100%;
+  max-height: 400px;   /* limitás la altura */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
